@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const url = "http://localhost:3000/";
+export const url = "https://64c10bfafa35860bae9fd682.mockapi.io/amirhk888/";
 
 class Actions {
     constructor() {

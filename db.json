@@ -1,44 +1,24 @@
 {
   "todos": [
     {
-      "title": "Todo 1",
-      "id": 1
+      "id": 1,
+      "title": "1-Todo One",
+      "done": false
     },
     {
-      "title": "Todo 2",
-      "id": 2
+      "id": 2,
+      "title": "2-Todo Two",
+      "done": false
     },
     {
-      "title": "Todo 3",
-      "id": 3
+      "id": 3,
+      "title": "3-Todo Three",
+      "done": false
     },
     {
-      "title": "Todo 4",
-      "id": 4
-    },
-    {
-      "title": "Todo 5",
-      "id": 5
-    },
-    {
-      "title": "Todo 6",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "title": "Todo 7"
-    },
-    {
-      "id": 8,
-      "title": "Todo 8"
-    },
-    {
-      "id": 9,
-      "title": "Todo 9"
-    },
-    {
-      "id": 10,
-      "title": "Todo 10"
+      "id": 4,
+      "title": "4-Todo Four",
+      "done": false
     }
   ]
 }
