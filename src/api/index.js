@@ -15,6 +15,10 @@ class Actions {
         await axios.post(url, data);
     }
 
+    async put(url, data) {
+        await axios.put(url, data);
+    }
+
     async delete(url) {
         await axios.delete(url);
     }
