@@ -1,0 +1,22 @@
+@import url(./desktop-dark.css);
+@import url(./mobile-dark.css);
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/*Colors*/
+/*Primary*/
+/*Neutral*/
+/*Light Theme*/
+/*Dark Theme*/
+@font-face {
+  font-family: JosefinSans;
+  src: url(../assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
+body {
+  font-size: 18px;
+  font-family: JosefinSans;
+}
+
+/*# sourceMappingURL=main-dark.css.map */
