@@ -8,7 +8,7 @@
 }
 @media (max-width: 649px) {
   body {
-    background: url(../assets/images/bg-mobile-light.jpg) no-repeat;
+    background: url(../assets/images/bg-mobile-dark.jpg) no-repeat;
     background-size: 100%;
   }
   body main {
