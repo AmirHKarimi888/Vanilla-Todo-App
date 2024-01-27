@@ -9,10 +9,29 @@ if("todos" in localStorage) {
     state.todos = JSON.parse(localStorage.getItem("todos"));
 }
 
-
 state.displayingTodos = state.todos;
 
+
+
+if("theme" in localStorage) {
+    null;
+} else {
+    localStorage.setItem("theme", "light");
+}
+
+state.theme = localStorage.getItem("theme");
+
+if(state.theme === "light") {
+    document.querySelector("#style").href = "./src/style/main.css";
+} else if(state.theme === "dark") {
+    document.querySelector("#style").href = "./src/style/main-dark.css";
+}
+
+
+
 TodosView.render();
+
+
 
 export const setFilter = (filter) => {
     state.filter = filter;
@@ -89,4 +108,18 @@ export const deleteTodo = (id) => {
 
     localStorage.setItem("todos", JSON.stringify(state.todos));
     state.displayingTodos = state.todos;
+}
+
+
+export const toggleTheme = () => {
+    if(state.theme === "light") {
+        state.theme = "dark";
+        document.querySelector("#style").href = "./src/style/main-dark.css";
+        localStorage.setItem("theme", "dark");
+
+    } else if(state.theme === "dark") {
+        state.theme = "light";
+        document.querySelector("#style").href = "./src/style/main.css";
+        localStorage.setItem("theme", "light");
+    }
 }

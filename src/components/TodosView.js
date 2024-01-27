@@ -1,4 +1,4 @@
-import { addTodo, clearCompleted, deleteTodo, setFilter, setTodoCompletionState } from "../main.js";
+import { addTodo, clearCompleted, deleteTodo, setFilter, setTodoCompletionState, toggleTheme } from "../main.js";
 import { state } from "../model.js";
 
 class TodosView {
@@ -21,24 +21,33 @@ class TodosView {
         const deleteTodoBtnsEl = document.querySelectorAll(".delete-todo-btn");
         const filtersEl = document.querySelectorAll(".card-footer-filter-item");
         const setTodoCompletionBtnEl = document.querySelectorAll(".set-todo-completion-btn");
-        const clearCompletedBtn = document.querySelector(".card-footer-clear-compeleted-btn");
+        const clearCompletedBtnEl = document.querySelector(".card-footer-clear-compeleted-btn");
+
+        const toggleThemeBtnEl = document.querySelector("#toggleThemeBtn");
 
         todoInputEl.addEventListener("change", (event) => {
            this.todoInput = event.target.value;
         })
 
         todoInputEl.addEventListener("keyup", (event) => {
-            if(event.key === "Enter") {
+            if(event.key === "Enter" && event.target.value !== "") {
                 addTodo(this.todoInput, todoInitialCheckBtnEl.checked);
                 this.render();
+                this.todoInput = "";
+
+                let lastTodo = state.todos.sort((a, b) => a - b)[state.todos.length - 1];
+                document.querySelector(`#cardBodyItem${ lastTodo?.id }`).style.animation = "moveToDown 1s ease 0s 1 normal forwards";
             }
         })
 
 
         deleteTodoBtnsEl.forEach(btn => {
             btn.addEventListener("click", () => {
-                deleteTodo(btn.id.slice(btn.id.length - 1));
-                this.render();
+                deleteTodo(btn.id.match(/\d+/));
+                document.querySelector(`#cardBodyItem${ btn.id.match(/\d+/) }`).style.animation = "moveToRight 1s ease 0s 1 normal forwards";
+                setTimeout(() => {
+                    this.render();
+                }, 1000)
             });
         })
 
@@ -56,8 +65,13 @@ class TodosView {
             })
         })
 
-        clearCompletedBtn.addEventListener("click", () => {
+        clearCompletedBtnEl.addEventListener("click", () => {
             clearCompleted();
+            this.render();
+        })
+
+        toggleThemeBtnEl.addEventListener("click", () => {
+            toggleTheme();
             this.render();
         })
     }
@@ -68,7 +82,7 @@ class TodosView {
         <div class="card">
         <div class="card-header">
           <span class="card-header-title">Todo</span>
-          <span class="card-header-theme-toggle-btn"><img src="./src/assets/images/icon-moon.svg" alt="moon"></span>
+          <span class="card-header-theme-toggle-btn"><img src="./src/assets/images/icon-${ state.theme === "light" ? 'moon' : 'sun' }.svg" alt="theme" id="toggleThemeBtn"></span>
         </div>
   
         <div class="card-body">
@@ -80,7 +94,7 @@ class TodosView {
           <ul class="card-body-items">
             ${
                 state.displayingTodos.length !== 0 ? state.displayingTodos.map(todo => /*html*/`
-                <li class="card-body-item">
+                <li class="card-body-item" id="cardBodyItem${ todo?.id }">
                 <div class="card-body-item-checking">
                   <span class="card-body-item-checkbox"><input type="checkbox" class="set-todo-completion-btn" id="setTodoCheckBtn${ todo?.id }" ${ todo?.completed ? "checked" : null }></span>
                   <span class="card-body-item-title" style="${ todo?.completed ? 'text-decoration: line-through; color: hsl(233, 11%, 84%);' : '' }">${ todo?.title }</span>

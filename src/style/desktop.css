@@ -144,6 +144,9 @@
   body main .card .card-body .card-body-items .card-body-item .card-body-item-checking .card-body-item-checkbox input[type=checkbox]:checked {
     background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   }
+  body main .card .card-body .card-body-items .card-body-item .card-body-item-checking .card-body-item-title {
+    cursor: pointer;
+  }
   body main .card .card-body .card-body-items .card-body-item .card-body-item-deleting {
     display: flex;
     align-items: center;

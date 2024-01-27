@@ -1,27 +1,27 @@
 /*Colors*/
 
 /*Primary*/
-
 $BrightBlue: hsl(220, 98%, 61%);
 $CheckBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 /*Neutral*/
 
-/*Light Theme*/
+/*Dark Theme*/
 
-$VeryLightGray: hsl(0, 0%, 98%);
-$VeryLightGrayishBlue: hsl(236, 33%, 92%);
-$LightGrayishBlue: hsl(233, 11%, 84%);
-$DarkGrayishBlue: hsl(236, 9%, 61%);
-$VeryDarkGrayishBlue: hsl(235, 19%, 35%);
-
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlueHover: hsl(236, 33%, 92%);
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
 
 @font-face {
     font-family: JosefinSans;
     src: url(../assets/fonts/JosefinSans-VariableFont_wght.ttf);
 }
 
-@media(max-width: 549px) {
+@media(max-width: 649px) {
 
     body {
         background: url(../assets/images/bg-mobile-light.jpg) no-repeat;
@@ -66,12 +66,12 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                         box-sizing: border-box;
                         width: 100%;
                         padding: 0.5rem 1rem;
-                        background-color: #fff;
+                        background-color: $VeryDarkDesaturatedBlue;
                         display: flex;
                         align-items: center;
                         gap: 1rem;
                         border-radius: .3rem;
-                        box-shadow: 0 0 6px rgba(99, 99, 99, 0.3);
+                        box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 
                         input[type=checkbox] {
                             box-sizing: border-box;
@@ -80,7 +80,7 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                             height: 20px;
                             border-radius: 50%;
                             outline: none;
-                            border: 1px solid $LightGrayishBlue;
+                            border: 1px solid $VeryDarkGrayishBlue;
                             cursor: pointer;
 
                             &:hover {
@@ -112,8 +112,10 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                             width: 100%;
                             padding: 0.6rem;
                             font-family: JosefinSans;
-                            color: $VeryDarkGrayishBlue;
+                            color: $DarkGrayishBlue;
                             border: 0;
+                            font-size: 0.9rem;
+                            background-color: $VeryDarkDesaturatedBlue;
 
                             &::placeholder {
                                 color: $DarkGrayishBlue;
@@ -129,14 +131,14 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                         margin-top: 1.5rem;
                         list-style-type: none;
                         border-radius: 0.3rem 0.3rem 0 0;
-                        background-color: #fff;
-                        box-shadow: 0 0 9px rgba(99, 99, 99, 0.3);
+                        background-color: $VeryDarkDesaturatedBlue;
+                        box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 
                         .card-body-item {
                             padding: 1rem;
-                            border-bottom: 1px solid $VeryLightGrayishBlue;
+                            border-bottom: 1px solid $VeryDarkGrayishBlue;
                             display: grid;
-                            grid-template-columns: 4fr 1fr;
+                            grid-template-columns: 1fr 1fr;
                             font-size: 0.9rem;
 
                             .card-body-item-checking {
@@ -145,7 +147,7 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                                 column-gap: 1rem;
 
                                 .card-body-item-checkbox {
-
+                                    
                                     input[type=checkbox] {
                                         display: grid;
                                         align-items: center;
@@ -154,7 +156,7 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                                         height: 20px;
                                         border-radius: 50%;
                                         outline: none;
-                                        border: 1px solid $LightGrayishBlue;
+                                        border: 1px solid $VeryDarkGrayishBlue;
                                         cursor: pointer;
             
                                         &:hover {
@@ -185,6 +187,7 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
 
                                 .card-body-item-title {
                                     cursor: pointer;
+                                    color: #fff;
                                 }
                             }
 
@@ -205,44 +208,34 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
 
                 .card-footer {
                     display: grid;
-                    grid-template-areas: 
-                    "a c"
-                    "b b";
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: 1fr 2fr 1fr;
                     box-sizing: border-box;
                     width: 100%;
                     padding: 1rem;
-                    background-color: #fff;
+                    background-color: $VeryDarkDesaturatedBlue;
                     align-items: center;
-                    column-gap: 1rem;
-                    row-gap: 2rem;
+                    gap: 1rem;
                     border-radius: 0 0 0.3rem 0.3rem;
-                    box-shadow: 0 5px 6px rgba(99, 99, 99, 0.3);
-                    font-size: 0.7rem;
+                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+                    font-size: 0.8rem;
                     color: $DarkGrayishBlue;
 
                     .card-footer-items-left {
-                        grid-area: a;
-                        order: 1;
-
                         span {
                             cursor: pointer;
 
                             &:hover {
                                 transition: 0.3s;
-                                color: $VeryDarkGrayishBlue;
+                                color: $LightGrayishBlue;
                             }
                         }
                     }
 
                     .card-footer-filter-items {
-                        grid-area: b;
                         list-style-type: none;
                         display: flex;
                         column-gap: 1rem;
                         justify-content: center;
-                        border-top: 1px solid $VeryLightGray;
-                        order: 3;
 
                         .card-footer-filter-item {
                             span {
@@ -250,24 +243,22 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
 
                                 &:hover {
                                     transition: 0.3s;
-                                    color: $VeryDarkGrayishBlue;
+                                    color: $LightGrayishBlue;
                                 }
                             }
                         }
                     }
 
                     .card-footer-clear-compeleted-btn {
-                        grid-area: c;
                         display: flex;
                         justify-self: end;
-                        order: 2;
 
                         span {
                             cursor: pointer;
 
                             &:hover {
                                 transition: 0.3s;
-                                color: $VeryDarkGrayishBlue;
+                                color: $LightGrayishBlue;
                             }
                         }
                     }

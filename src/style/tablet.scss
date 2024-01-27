@@ -182,6 +182,10 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                                         }
                                     }
                                 }
+
+                                .card-body-item-title {
+                                    cursor: pointer;
+                                }
                             }
 
                             .card-body-item-deleting {

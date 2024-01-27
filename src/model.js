@@ -14,5 +14,6 @@ export const state = {
     displayingTodos: [
 
     ],
-    filter: "all"
+    filter: "all",
+    theme: "dark"
 }

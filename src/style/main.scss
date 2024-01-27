@@ -10,14 +10,12 @@
 /*Colors*/
 
 /*Primary*/
-
 $BrightBlue: hsl(220, 98%, 61%);
 $CheckBackground: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
 
 /*Neutral*/
 
 /*Light Theme*/
-
 $VeryLightGray: hsl(0, 0%, 98%);
 $VeryLightGrayishBlue: hsl(236, 33%, 92%);
 $LightGrayishBlue: hsl(233, 11%, 84%);
@@ -32,5 +30,29 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
 body {
     font-size: 18px;
     font-family: JosefinSans;
+    background-color: $VeryLightGray;
 }
 
+@keyframes moveToDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}

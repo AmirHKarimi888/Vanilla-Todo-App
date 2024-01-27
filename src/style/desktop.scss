@@ -145,7 +145,7 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                                 column-gap: 1rem;
 
                                 .card-body-item-checkbox {
-
+                                    
                                     input[type=checkbox] {
                                         display: grid;
                                         align-items: center;
@@ -181,6 +181,10 @@ $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
                                             background: $CheckBackground;
                                         }
                                     }
+                                }
+
+                                .card-body-item-title {
+                                    cursor: pointer;
                                 }
                             }
 
