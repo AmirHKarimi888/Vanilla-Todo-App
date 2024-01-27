@@ -104,7 +104,7 @@ class TodosView {
                   <span class="card-body-item-delete-btn"><img src="./src/assets/images/icon-cross.svg" alt="delete" class="delete-todo-btn" id="deleteTodoBtn${ todo?.id }"></span>
                 </div>
               </li>`).join("") : /*html*/`
-              <p style="padding: 2rem; text-align: center;">Your todo list is empty!</p>
+              <p style="padding: 2rem; text-align: center; color: hsl(220, 98%, 61%);">Your todo list is empty!</p>
               `
             }
           </ul>
